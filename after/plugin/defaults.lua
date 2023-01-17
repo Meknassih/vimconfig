@@ -4,3 +4,5 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 
 vim.keymap.set('n', '<Enter>', 'o<ESC>')
 vim.keymap.set('n', '<S-Enter>', 'O<ESC>')
+
+vim.keymap.set('n', '<Leader>o', ':wa<CR>')
