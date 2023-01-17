@@ -27,5 +27,18 @@ return function(use)
       require('nvim-ts-autotag').setup()
     end
   }
+
+  -- using packer.nvim
+  use { 'akinsho/bufferline.nvim',
+    tag = "v3.*",
+    requires = 'nvim-tree/nvim-web-devicons'
+  }
+
+  require('bufferline').setup {
+    options = {
+      mode = "tabs", -- set to "tabs" to only show tabpages instead
+      numbers = "ordinal",
+    }
+  }
 end
 
