@@ -12,6 +12,8 @@ M.general = {
     },
     ["<leader>df"] = { ":w !diff % -", "diff buffer vs disk", opts = { nowait = true } },
     ["<leader>fk"] = { "<cmd> Telescope keymaps <CR>", "Find keymap" },
+    ["<leader>cw"] = { "<cmd> close <CR>", "Close window" },
+    ["<CR>"] = { "i<CR><ESC>", "Add newline"},
   },
   v = {
     [">"] = { ">gv", "indent" },
