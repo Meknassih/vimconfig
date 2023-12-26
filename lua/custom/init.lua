@@ -15,3 +15,15 @@ autocmd("FileType", {
     vim.opt.relativenumber = true
   end,
 })
+
+vim.o.showbreak = "↪ "
+vim.opt.listchars = {
+  eol = "↵",
+  tab = "→ ",
+  nbsp = "␣",
+  trail = "•",
+  lead = "•",
+  extends = "⟩",
+  precedes = "⟨",
+}
+vim.opt.list = true
