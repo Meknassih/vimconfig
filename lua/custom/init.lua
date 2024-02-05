@@ -27,3 +27,9 @@ vim.opt.listchars = {
   precedes = "⟨",
 }
 vim.opt.list = true
+vim.opt.clipboard = ""
+
+-- Folding with Treesitter
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldenable = false

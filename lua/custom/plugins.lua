@@ -57,12 +57,19 @@ local plugins = {
   {
     "tpope/vim-fugitive",
     lazy = false,
-  }
+  },
   -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      triggers_blacklist = {
+        -- list of mode / prefixes that should never be hooked by WhichKey
+        -- this is mostly relevant for keymaps that start with a native binding
+        -- i = { "d", "k" },
+        -- v = { "j", "k" },
+      },
+    },
+  },
 
   -- All NvChad plugins are lazy-loaded by default
   -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`

@@ -5,7 +5,16 @@ local b = null_ls.builtins
 local sources = {
 
   -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
+  b.formatting.deno_fmt.with {
+    extra_args = function(params)
+      return params.options
+        and params.options.tabSize
+        and {
+          "--tab-width",
+          params.options.tabSize,
+        }
+    end,
+  }, -- choosed deno for ts/js files cuz its very fast!
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
 
   -- Lua

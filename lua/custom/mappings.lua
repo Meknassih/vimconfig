@@ -13,12 +13,18 @@ M.general = {
     ["<leader>df"] = { ":w !diff % -", "diff buffer vs disk", opts = { nowait = true } },
     ["<leader>fk"] = { "<cmd> Telescope keymaps <CR>", "Find keymap" },
     ["<leader>cw"] = { "<cmd> close <CR>", "Close window" },
-    ["<CR>"] = { "i<CR><ESC>", "Add newline"},
+    ["<leader>fs"] = { "<cmd> Telescope grep_string <CR>", "Live grep current word" },
+    ["p"] = { '"0p', "Paste from yank register", opts = { noremap = true } },
+    ["P"] = { '"0P', "Paste from yank register", opts = { noremap = true } },
+    ["<C-B>"] = { '"+yy', "Copy line to 'synchronized with OS clipboard' register"}
   },
   v = {
     [">"] = { ">gv", "indent" },
     ["M"] = { ":m '<-2<CR>gv=gv", "move line up" },
     ["m"] = { ":m '>+1<CR>gv=gv", "move line down" },
+    ["p"] = { '"0p', "Paste from yank register", opts = { noremap = true } },
+    ["P"] = { '"0P', "Paste from yank register", opts = { noremap = true } },
+    ["<C-B>"] = { '"+y', "Copy to 'synchronized with OS clipboard' register"}
   },
 }
 
