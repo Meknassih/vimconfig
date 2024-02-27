@@ -10,8 +10,8 @@ M.override = {
     italic = true,
   },
   Visual = {
-        bg = "nord_blue",
-    }
+    bg = "nord_blue",
+  },
 }
 
 ---@type HLTable
