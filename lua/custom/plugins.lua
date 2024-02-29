@@ -58,6 +58,10 @@ local plugins = {
     "tpope/vim-fugitive",
     lazy = false,
   },
+  {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+  },
   -- To make a plugin not be loaded
   {
     "folke/which-key.nvim",
