@@ -16,7 +16,10 @@ M.general = {
     ["<leader>fs"] = { "<cmd> Telescope grep_string <CR>", "Live grep current word" },
     ["p"] = { '"0p', "Paste from yank register", opts = { noremap = true } },
     ["P"] = { '"0P', "Paste from yank register", opts = { noremap = true } },
-    ["<C-B>"] = { '"+yy', "Copy line to 'synchronized with OS clipboard' register"}
+    ["<C-B>"] = { '"+yy', "Copy line to 'synchronized with OS clipboard' register"},
+    ["<leader>ai"] = {':lua vim.api.nvim_call_function("codeium#Chat", {})<CR>', "Chat with AI",
+      opts = { nowait = true, noremap = true, silent = true }
+    },
   },
   v = {
     [">"] = { ">gv", "indent" },
