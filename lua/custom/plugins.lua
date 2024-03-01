@@ -48,7 +48,7 @@ local plugins = {
   },
   {
     "tpope/vim-surround",
-    event = "InsertEnter",
+    event = "BufEnter",
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
