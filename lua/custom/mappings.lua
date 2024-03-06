@@ -20,6 +20,9 @@ M.general = {
     ["<leader>ai"] = {':lua vim.api.nvim_call_function("codeium#Chat", {})<CR>', "Chat with AI",
       opts = { nowait = true, noremap = true, silent = true }
     },
+    ["<leader>o"] = {'<cmd>Outline<CR>', "Toggle Outline",
+      opts = { nowait = true, noremap = true, silent = true }
+    },
   },
   v = {
     [">"] = { ">gv", "indent" },
