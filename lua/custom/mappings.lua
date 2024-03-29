@@ -16,12 +16,16 @@ M.general = {
     ["<leader>fs"] = { "<cmd> Telescope grep_string <CR>", "Live grep current word" },
     ["p"] = { '"0p', "Paste from yank register", opts = { noremap = true } },
     ["P"] = { '"0P', "Paste from yank register", opts = { noremap = true } },
-    ["<C-B>"] = { '"+yy', "Copy line to 'synchronized with OS clipboard' register"},
-    ["<leader>ai"] = {':lua vim.api.nvim_call_function("codeium#Chat", {})<CR>', "Chat with AI",
-      opts = { nowait = true, noremap = true, silent = true }
+    ["<C-B>"] = { '"+yy', "Copy line to 'synchronized with OS clipboard' register" },
+    ["<leader>ai"] = {
+      ':lua vim.api.nvim_call_function("codeium#Chat", {})<CR>',
+      "Chat with AI",
+      opts = { nowait = true, noremap = true, silent = true },
     },
-    ["<leader>o"] = {'<cmd>Outline<CR>', "Toggle Outline",
-      opts = { nowait = true, noremap = true, silent = true }
+    ["<leader>o"] = {
+      "<cmd>Outline<CR>",
+      "Toggle Outline",
+      opts = { nowait = true, noremap = true, silent = true },
     },
   },
   v = {
@@ -30,8 +34,15 @@ M.general = {
     ["m"] = { ":m '>+1<CR>gv=gv", "move line down" },
     ["p"] = { '"0p', "Paste from yank register", opts = { noremap = true } },
     ["P"] = { '"0P', "Paste from yank register", opts = { noremap = true } },
-    ["<C-B>"] = { '"+y', "Copy to 'synchronized with OS clipboard' register"}
+    ["<C-B>"] = { '"+y', "Copy to 'synchronized with OS clipboard' register" },
   },
+  i = {
+    ["<C-;>"] = {
+      function() return vim.fn['codeium#Accept']() end,
+      "Accept AI suggestion",
+      opts = { nowait = true, expr = true },
+    },
+  }
 }
 
 -- more keybinds!
