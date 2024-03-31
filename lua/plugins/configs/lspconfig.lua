@@ -64,4 +64,13 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
+require("lspconfig").volar.setup({
+  filetypes = { "vue" },
+  init_options = {
+    typescript = {
+      tsdk = "/Users/mekna/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+    },
+  }
+})
+
 return M
