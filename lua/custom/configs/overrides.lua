@@ -34,6 +34,7 @@ M.mason = {
     "deno",
     "prettier",
     "vue-language-server",
+    "solargraph",
 
     -- c/cpp stuff
     "clangd",
