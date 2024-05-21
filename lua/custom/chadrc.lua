@@ -9,15 +9,27 @@ local function getCodeiumStatus()
   return "%#St_LspStatus#" .. "󱠀" .. vim.api.nvim_call_function("codeium#GetStatusString", {}) .. " "
 end
 
+-- Function to get relative path to current file
+local function getRelativePath(file_string)
+  -- Copy file icon from original string
+  local starts_with_icon = string.gsub(file_string,"%%#St_file_info# ", "")
+  -- local icon = string.sub(starts_with_icon, 1, 4)
+  local icon = string.match(starts_with_icon, "%S+")
+  -- Return similar string with the relative path to file
+  return "%#St_file_info#" .. icon .. " " .. vim.fn.fnamemodify(vim.fn.expand "%", ":~:.") .. "%#St_file_sep#"
+end
+
 M.ui = {
-  theme = "tokyodark",
-  theme_toggle = { "tokyodark", "one_light" },
+  theme = "tokyonight",
+  theme_toggle = { "tokyonight", "one_light" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
 
   statusline = {
+    -- default = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" }
     overriden_modules = function (modules)
+      modules[2] = getRelativePath(modules[2])
       table.insert(
         modules,
         7,
