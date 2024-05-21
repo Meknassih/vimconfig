@@ -13,7 +13,6 @@ end
 local function getRelativePath(file_string)
   -- Copy file icon from original string
   local starts_with_icon = string.gsub(file_string,"%%#St_file_info# ", "")
-  -- local icon = string.sub(starts_with_icon, 1, 4)
   local icon = string.match(starts_with_icon, "%S+")
   -- Return similar string with the relative path to file
   return "%#St_file_info#" .. icon .. " " .. vim.fn.fnamemodify(vim.fn.expand "%", ":~:.") .. "%#St_file_sep#"
