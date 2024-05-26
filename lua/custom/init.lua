@@ -9,9 +9,9 @@ local autocmd = vim.api.nvim_create_autocmd
 autocmd("FileType", {
   pattern = "*",
   callback = function()
-    vim.opt.shiftwidth = 4
-    vim.opt.tabstop = 4
-    vim.opt.softtabstop = 4
+    vim.opt.shiftwidth = 0 -- means use tabstop value
+    vim.opt.tabstop = 2
+    vim.opt.softtabstop = 2
     vim.opt.relativenumber = true
   end,
 })
