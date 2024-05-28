@@ -64,11 +64,16 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
+local mason_registry = require("mason-registry")
+-- note that this will error if you provide a non-existent package name
+local vls = mason_registry.get_package("vue-language-server")
+-- returns a string like "/home/user/.local/share/nvim/mason/packages/codelldb"
+local vls_path = vls:get_install_path()
 require("lspconfig").volar.setup({
   filetypes = { "vue" },
   init_options = {
     typescript = {
-      tsdk = "/Users/mekna/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+      tsdk = vls_path .. "/node_modules/typescript/lib",
     },
   }
 })
