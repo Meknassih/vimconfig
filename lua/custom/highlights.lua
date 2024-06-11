@@ -10,7 +10,7 @@ M.override = {
     italic = true,
   },
   Visual = {
-    bg = "nord_blue",
+    bg = "light_grey",
   },
 }
 
