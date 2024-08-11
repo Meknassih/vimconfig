@@ -42,7 +42,7 @@ M.general = {
     ["<C-B>"] = { '"+y', "Copy to 'synchronized with OS clipboard' register" },
   },
   i = {
-    ["<C-j>"] = {
+    ["<C-a>"] = {
       function() return vim.fn['codeium#Accept']() end,
       "Accept AI suggestion",
       opts = { nowait = true, expr = true },
