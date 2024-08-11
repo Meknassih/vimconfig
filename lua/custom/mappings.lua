@@ -27,6 +27,11 @@ M.general = {
       "Toggle Outline",
       opts = { nowait = true, noremap = true, silent = true },
     },
+    ["<leader>cb"] = {
+      "<cmd> %bd|e#|bd# <CR>",
+      "Close all but current buffer",
+      opts = { nowait = true, noremap = true, silent = true },
+    }
   },
   v = {
     [">"] = { ">gv", "indent" },
