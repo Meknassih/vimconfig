@@ -65,7 +65,6 @@ local plugins = {
       vim.g.codeium_no_map_tab = 1
     end,
   },
-  -- To make a plugin not be loaded
   {
     "folke/which-key.nvim",
     opts = {
@@ -86,6 +85,13 @@ local plugins = {
     event = "BufRead",
     config = function()
       require("outline").setup {}
+    end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    config = function()
+      require('nvim-ts-autotag').setup {}
     end,
   },
   -- All NvChad plugins are lazy-loaded by default
